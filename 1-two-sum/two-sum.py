@@ -1,14 +1,9 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-        """
-        :type nums: List[int]
-        :type target: int
-        :rtype: List[int]
-        """
-        prevMap = {} # val: index
-        for i, n in enumerate(nums):
-            diff = target - n
-            if diff in prevMap:
-                return [prevMap[diff], i]
-            prevMap[n] = i
-        return
+class Solution: 
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {} # {val, index}
+
+        for i in range(len(nums)):
+            diff = target - nums[i]
+            if diff in seen:
+                return [seen[diff], i]
+            seen[nums[i]] = i
