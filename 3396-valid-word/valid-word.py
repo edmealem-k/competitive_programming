@@ -5,7 +5,7 @@ class Solution:
         if n < 3:
             return False 
 
-        vowels = set("aeiouAEIOU")
+        vowels = "aeiouAEIOU"
         has_vowel = False
         has_consonant = False
 
