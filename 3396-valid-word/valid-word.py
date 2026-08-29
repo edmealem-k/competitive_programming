@@ -12,7 +12,7 @@ class Solution:
         for i in range(n):
             char = word[i]
 
-            if ("0" <= char <= "9") or ("a" <= char <= "z") or ("A" <= char <= "Z"):
+            if ("0" <= char <= "9") or char.isalpha():
                 if char.isalpha():
                     if char in vowels:
                         has_vowel = True
