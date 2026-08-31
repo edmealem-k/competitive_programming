@@ -1,11 +1,12 @@
 class Solution:
     def returnToBoundaryCount(self, nums: List[int]) -> int:
-        position = 0
-        boundary_count = 0
-        
-        for step in nums:
-            position += step
-            if position == 0:
-                boundary_count += 1
-                
-        return boundary_count
+        steps = 0
+        count = 0
+        # 2,3,-5
+        # num 2, step
+        for i in range(len(nums)):
+            steps += nums[i]
+            if steps == 0:
+                count += 1
+
+        return count
