@@ -8,11 +8,11 @@ class Solution:
 
         # Set baseline direction for the first pair
         direction = 1 if nums[1] > nums[0] else (-1 if nums[1] < nums[0] else 0)
-        if direction != 0:
-            count = 2
-            max_count = 2
+        # if direction != 0:
+        #     count = 2
+        #     max_count = 2
 
-        for i in range(1, len(nums) - 1):
+        for i in range( len(nums) - 1):
             next_num =  nums[i+1]
             num = nums[i]
 
