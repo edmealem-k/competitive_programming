@@ -11,15 +11,12 @@ class Solution:
         
         output = ""
 
-        if ones == 1:
-            for i in range(zeros):
-                output += "0"
+        for i in range(ones-1):
             output += "1"
-        else:
-            for i in range(ones-1):
-                output += "1"
-            for i in range(zeros):
-                output += "0"
-            output += "1"
+
+        for i in range(zeros):
+            output += "0"
+            
+        output += "1"
         
         return output
