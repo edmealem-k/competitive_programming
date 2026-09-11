@@ -4,15 +4,10 @@ function relativeSortArray(arr1: number[], arr2: number[]): number[] {
     let count: Record<number, number> = {}
     let result : number[] = []
 
-    for (const num of arr2) {
-       count[num] = 0;
-    }
-
     for (const num of arr1) {
-        if (count[num] >= 0) {
-            count[num] += 1
-        }
-        if (!arr2.includes(num)) {
+        if (arr2.includes(num)) {
+            count[num] = (count[num] || 0) + 1;
+        } else {
             ex_arrs.push(num)
         }
     }
