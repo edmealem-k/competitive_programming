@@ -1,13 +1,20 @@
 function heightChecker(heights: number[]): number {
-    let expected = [...heights].sort((a, b) => a - b)
-    let output = 0; 
-
-    console.log(heights)
-    console.log(expected)
+    let count = new Array(101).fill(0)
 
     for (let i = 0; i < heights.length; i++) {
-        if (heights[i] !== expected[i]) {
-            output += 1;
+        count[heights[i]]++
+    }
+
+    let idx = 0;
+    let output = 0; 
+
+    for (let i = 0; i < count.length; i++) {
+        while(count[i] != 0) {
+            if (heights[idx] != i) {
+                output++
+            }
+            count[i]--;
+            idx++;
         }
     }
 
